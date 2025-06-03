@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import sequelizeConnection from "../repositories/dbSequelize.js";
-import Autor from "./autor.model.js";
 import Cliente from "./cliente.model.js";
+import Livro from "./livro.model.js";
 
 const Venda = sequelizeConnection.define(
   "venda",
@@ -13,7 +13,11 @@ const Venda = sequelizeConnection.define(
       primaryKey: true,
     },
     valor: {
-      type: Sequelize.STRING,
+      type: Sequelize.DOUBLE,
+      allowNull: false,
+    },
+    dataVenda: {
+      type: Sequelize.DATE,
       allowNull: false,
     },
     estoque: {
@@ -26,7 +30,7 @@ const Venda = sequelizeConnection.define(
   }
 );
 
-Venda.belongsTo(Autor, { foreignKey: "autorId" });
+Venda.belongsTo(Livro, { foreignKey: "livroId" });
 Venda.belongsTo(Cliente, { foreignKey: "clienteId" });
 
 export default Venda;

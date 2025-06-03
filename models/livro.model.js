@@ -11,8 +11,11 @@ const Livro = sequelizeConnection.define(
       allowNull: false,
       primaryKey: true,
     },
+    nome:{
+
+    },
     valor: {
-      type: Sequelize.STRING,
+      type: Sequelize.DOUBLE,
       allowNull: false,
     },
     estoque: {
