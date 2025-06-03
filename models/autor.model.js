@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
 import sequelizeConnection from "../repositories/dbSequelize.js";
 
-const Cliente = sequelizeConnection.define(
-  "cliente",
+const Autor = sequelizeConnection.define(
+  "autor",
   {
-    clienteId: {
+    autorId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
@@ -18,20 +18,14 @@ const Cliente = sequelizeConnection.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    senha: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
     telefone: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    endereco: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
   },
-  { underscored: true }
+  {
+    underscored: true,
+  }
 );
 
-export default Cliente;
+export default Autor;

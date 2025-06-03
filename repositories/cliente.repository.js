@@ -28,7 +28,7 @@ async function getCliente(id) {
 async function updateCliente(cliente) {
   try {
     await Cliente.update(cliente, {
-      wher: {
+      where: {
         clienteId: cliente.clienteId,
       },
     });
